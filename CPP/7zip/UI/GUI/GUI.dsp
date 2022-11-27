@@ -4,61 +4,25 @@
 
 # TARGTYPE "Win32 (x86) Application" 0x0101
 
-CFG=GUI - Win32 DebugU
+CFG=GUI - Win32 Debug
 !MESSAGE This is not a valid makefile. To build this project using NMAKE,
 !MESSAGE use the Export Makefile command and run
-!MESSAGE 
+!MESSAGE
 !MESSAGE NMAKE /f "GUI.mak".
-!MESSAGE 
+!MESSAGE
 !MESSAGE You can specify a configuration when running NMAKE
 !MESSAGE by defining the macro CFG on the command line. For example:
-!MESSAGE 
-!MESSAGE NMAKE /f "GUI.mak" CFG="GUI - Win32 DebugU"
-!MESSAGE 
-!MESSAGE Possible choices for configuration are:
-!MESSAGE 
-!MESSAGE "GUI - Win32 Release" (based on "Win32 (x86) Application")
-!MESSAGE "GUI - Win32 Debug" (based on "Win32 (x86) Application")
-!MESSAGE "GUI - Win32 ReleaseU" (based on "Win32 (x86) Application")
-!MESSAGE "GUI - Win32 DebugU" (based on "Win32 (x86) Application")
-!MESSAGE 
+!MESSAGE
+!MESSAGE NMAKE /f "GUI.mak" CFG="GUI - Win32 Debug"
+!MESSAGE
+
 
 # Begin Project
 # PROP AllowPerConfigDependencies 0
 # PROP Scc_ProjName ""
 # PROP Scc_LocalPath ""
-CPP=cl.exe
-MTL=midl.exe
-RSC=rc.exe
 
-!IF  "$(CFG)" == "GUI - Win32 Release"
-
-# PROP BASE Use_MFC 0
-# PROP BASE Use_Debug_Libraries 0
-# PROP BASE Output_Dir "Release"
-# PROP BASE Intermediate_Dir "Release"
-# PROP BASE Target_Dir ""
-# PROP Use_MFC 0
-# PROP Use_Debug_Libraries 0
-# PROP Output_Dir "Release"
-# PROP Intermediate_Dir "Release"
-# PROP Ignore_Export_Lib 0
-# PROP Target_Dir ""
-# ADD BASE CPP /nologo /W3 /GX /O2 /D "WIN32" /D "NDEBUG" /D "_WINDOWS" /D "_MBCS" /Yu"stdafx.h" /FD /c
-# ADD CPP /nologo /Gr /MD /W4 /WX /GX /O1 /D "NDEBUG" /D "_MBCS" /D "WIN32" /D "_WINDOWS" /D "LANG" /D "WIN_LONG_PATH" /D "EXTERNAL_CODECS" /D "SUPPORT_DEVICE_FILE" /D "_7ZIP_LARGE_PAGES" /FAcs /Yu"stdafx.h" /FD /c
-# ADD BASE MTL /nologo /D "NDEBUG" /mktyplib203 /win32
-# ADD MTL /nologo /D "NDEBUG" /mktyplib203 /win32
-# ADD BASE RSC /l 0x419 /d "NDEBUG"
-# ADD RSC /l 0x419 /d "NDEBUG"
-BSC32=bscmake.exe
-# ADD BASE BSC32 /nologo
-# ADD BSC32 /nologo
-LINK32=link.exe
-# ADD BASE LINK32 kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /nologo /subsystem:windows /machine:I386
-# ADD LINK32 kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib comctl32.lib htmlhelp.lib /nologo /subsystem:windows /machine:I386 /out:"C:\Program Files\7-Zip\7zg.exe" /opt:NOWIN98
-# SUBTRACT LINK32 /pdb:none
-
-!ELSEIF  "$(CFG)" == "GUI - Win32 Debug"
+!IF  "$(CFG)" == "GUI - Win32 Debug"
 
 # PROP BASE Use_MFC 0
 # PROP BASE Use_Debug_Libraries 1
@@ -71,73 +35,139 @@ LINK32=link.exe
 # PROP Intermediate_Dir "Debug"
 # PROP Ignore_Export_Lib 0
 # PROP Target_Dir ""
-# ADD BASE CPP /nologo /W3 /Gm /GX /ZI /Od /D "WIN32" /D "_DEBUG" /D "_WINDOWS" /D "_MBCS" /Yu"stdafx.h" /FD /GZ /c
-# ADD CPP /nologo /Gr /MDd /W4 /WX /Gm /GX /ZI /Od /D "_DEBUG" /D "_MBCS" /D "WIN32" /D "_WINDOWS" /D "LANG" /D "WIN_LONG_PATH" /D "EXTERNAL_CODECS" /D "SUPPORT_DEVICE_FILE" /D "_7ZIP_LARGE_PAGES" /Yu"stdafx.h" /FD /GZ /c
-# ADD BASE MTL /nologo /D "_DEBUG" /mktyplib203 /win32
-# ADD MTL /nologo /D "_DEBUG" /mktyplib203 /win32
-# ADD BASE RSC /l 0x419 /d "_DEBUG"
-# ADD RSC /l 0x419 /d "_DEBUG"
+# ADD BASE CPP /nologo /W3 /GX /ZI /Od /D "WIN32" /D "_DEBUG" /D "_CONSOLE" /D "_MBCS" /Gm /EHsc /RTC1 /MDd /Fo"Debug\\" /Fd"Debug\vc60.pdb" /FD /GZ /c
+# ADD CPP /nologo /W3 /GX /ZI /Od /D "WIN32" /D "_DEBUG" /D "_CONSOLE" /D "_MBCS" /Gm /EHsc /RTC1 /MDd /Fo"Debug\\" /Fd"Debug\vc60.pdb" /FD /GZ /c
+# ADD BASE RSC /l 0x409 /d "_DEBUG"
+# ADD RSC /l 0x409 /d "_DEBUG"
 BSC32=bscmake.exe
-# ADD BASE BSC32 /nologo
-# ADD BSC32 /nologo
+BSC32_FLAGS=/nologo /o"Debug\GUI.bsc"
+BSC32_SBRS=
+BSC32_SBRS=
 LINK32=link.exe
-# ADD BASE LINK32 kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /nologo /subsystem:windows /debug /machine:I386 /pdbtype:sept
-# ADD LINK32 kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib comctl32.lib htmlhelp.lib /nologo /subsystem:windows /debug /machine:I386 /out:"C:\Program Files\7-Zip\7zg.exe" /pdbtype:sept
+LINK32_FLAGS=/nologo /subsystem:console /incremental:no /pdb:"Debug\GUI.pdb" /debug /machine:I386 /out:"Debug\GUI.exe" /libpath:"C:\Program Files\Microsoft Visual Studio\VC98\lib"  kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib
+LINK32_OBJS=Debug\GUI.obj
+# Begin Custom Build - GUI.cpp
+CPP=cl.exe
+CPP_PROJ=/nologo /W3 /GX /ZI /Od /D "WIN32"
+CPP_OBJS=Debug\GUI.obj
+CPP_SBRS=
+CPP_SBRS=
+CPP_DEPS=Debug\GUI.dep
+CPP_DEPS_CPP=Debug\GUI.dep
+CPP_FLAGS=/D "_DEBUG" /D "_CONSOLE" /D "_MBCS" /Gm /EHsc /RTC1 /MDd /Fo"Debug\\" /Fd"Debug\vc60.pdb" /FD /GZ /c
+CPP_CMD=cl.exe /nologo /W3 /GX /ZI /Od /D "WIN32" /D "_DEBUG" /D "_CONSOLE" /D "_MBCS" /Gm /EHsc /RTC1 /MDd /Fo"Debug\\" /Fd"Debug\vc60.pdb" /FD /GZ /c GUI.cpp
+# End Custom Build
 
-!ELSEIF  "$(CFG)" == "GUI - Win32 ReleaseU"
+!ELSEIF  "$(CFG)" == "GUI - Win32 Release"
 
 # PROP BASE Use_MFC 0
 # PROP BASE Use_Debug_Libraries 0
-# PROP BASE Output_Dir "ReleaseU"
-# PROP BASE Intermediate_Dir "ReleaseU"
-# PROP BASE Ignore_Export_Lib 0
+# PROP BASE Output_Dir "Release"
+# PROP BASE Intermediate_Dir "Release"
 # PROP BASE Target_Dir ""
 # PROP Use_MFC 0
 # PROP Use_Debug_Libraries 0
-# PROP Output_Dir "ReleaseU"
-# PROP Intermediate_Dir "ReleaseU"
+# PROP Output_Dir "Release"
+# PROP Intermediate_Dir "Release"
 # PROP Ignore_Export_Lib 0
 # PROP Target_Dir ""
-# ADD BASE CPP /nologo /MD /W3 /GX /O2 /D "WIN32" /D "NDEBUG" /D "_WINDOWS" /D "_MBCS" /Yu"stdafx.h" /FD /c
-# ADD CPP /nologo /Gr /MD /W4 /WX /GX /O1 /D "NDEBUG" /D "_UNICODE" /D "UNICODE" /D "WIN32" /D "_WINDOWS" /D "LANG" /D "WIN_LONG_PATH" /D "EXTERNAL_CODECS" /D "SUPPORT_DEVICE_FILE" /D "_7ZIP_LARGE_PAGES" /Yu"stdafx.h" /FD /c
-# ADD BASE MTL /nologo /D "NDEBUG" /mktyplib203 /win32
-# ADD MTL /nologo /D "NDEBUG" /mktyplib203 /win32
-# ADD BASE RSC /l 0x419 /d "NDEBUG"
-# ADD RSC /l 0x419 /d "NDEBUG"
+# ADD BASE CPP /nologo /W3 /GX /O2 /D "WIN32" /D "NDEBUG" /D "_CONSOLE" /D "_MBCS" /Gm /EHsc /MD /Fo"Release\\" /Fd"Release\vc60.pdb" /FD /GZ /c
+# ADD CPP /nologo /W3 /GX /O2 /D "WIN32" /D "NDEBUG" /D "_CONSOLE" /D "_MBCS" /Gm /EHsc /MD /Fo"Release\\" /Fd"Release\vc60.pdb" /FD /GZ /c
+# ADD BASE RSC /l 0x409 /d "NDEBUG"
+# ADD RSC /l 0x409 /d "NDEBUG"
 BSC32=bscmake.exe
-# ADD BASE BSC32 /nologo
-# ADD BSC32 /nologo
+BSC32_FLAGS=/nologo /o"Release\GUI.bsc"
+BSC32_SBRS=
+BSC32_SBRS=
 LINK32=link.exe
-# ADD BASE LINK32 kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /nologo /subsystem:windows /machine:I386 /out:"C:\UTIL\7zg.exe"
-# ADD LINK32 kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib comctl32.lib htmlhelp.lib /nologo /subsystem:windows /machine:I386 /out:"C:\Program Files\7-Zip\7zgn.exe" /opt:NOWIN98
-# SUBTRACT LINK32 /pdb:none
+LINK32_FLAGS=/nologo /subsystem:console /incremental:no /pdb:"Release\GUI.pdb" /debug /machine:I386
+LINK32_OBJS=Release\GUI.obj
+# Begin Custom Build - GUI.cpp
+CPP=cl.exe
+CPP_PROJ=/nologo /W3 /GX /O2 /D "WIN32"
+CPP_OBJS=Release\GUI.obj
+CPP_SBRS=
+CPP_SBRS=
+CPP_DEPS=Release\GUI.dep
+CPP_DEPS_CPP=Release\GUI.dep
+CPP_FLAGS=/D "NDEBUG" /D "_CONSOLE" /D "_MBCS" /Gm /EHsc /MD /Fo"Release\\" /Fd"Release\vc60.pdb" /FD /GZ /c
+CPP_CMD=cl.exe /nologo /W3 /GX /O2 /D "WIN32" /D "NDEBUG" /D "_CONSOLE" /D "_MBCS" /Gm /EHsc /MD /Fo"Release\\" /Fd"Release\vc60.pdb" /FD /GZ /c GUI.cpp
+# End Custom Build
 
-!ELSEIF  "$(CFG)" == "GUI - Win32 DebugU"
+!ENDIF 
 
-# PROP BASE Use_MFC 0
-# PROP BASE Use_Debug_Libraries 1
-# PROP BASE Output_Dir "DebugU"
-# PROP BASE Intermediate_Dir "DebugU"
-# PROP BASE Ignore_Export_Lib 0
-# PROP BASE Target_Dir ""
-# PROP Use_MFC 0
-# PROP Use_Debug_Libraries 1
-# PROP Output_Dir "DebugU"
-# PROP Intermediate_Dir "DebugU"
-# PROP Ignore_Export_Lib 0
-# PROP Target_Dir ""
-# ADD BASE CPP /nologo /MDd /W3 /Gm /GX /ZI /Od /D "WIN32" /D "_DEBUG" /D "_WINDOWS" /D "_MBCS" /Yu"stdafx.h" /FD /GZ /c
-# ADD CPP /nologo /Gr /MDd /W4 /WX /Gm /GX /ZI /Od /D "_DEBUG" /D "_UNICODE" /D "UNICODE" /D "WIN32" /D "_WINDOWS" /D "LANG" /D "WIN_LONG_PATH" /D "EXTERNAL_CODECS" /D "SUPPORT_DEVICE_FILE" /D "_7ZIP_LARGE_PAGES" /Yu"stdafx.h" /FD /GZ /c
-# ADD BASE MTL /nologo /D "_DEBUG" /mktyplib203 /win32
-# ADD MTL /nologo /D "_DEBUG" /mktyplib203 /win32
-# ADD BASE RSC /l 0x419 /d "_DEBUG"
-# ADD RSC /l 0x419 /d "_DEBUG"
-BSC32=bscmake.exe
-# ADD BASE BSC32 /nologo
-# ADD BSC32 /nologo
-LINK32=link.exe
-# ADD BASE LINK32 kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /nologo /subsystem:windows /debug /machine:I386 /out:"C:\UTIL\7zg.exe" /pdbtype:sept
-# ADD LINK32 kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib comctl32.lib htmlhelp.lib /nologo /subsystem:windows /debug /machine:I386 /out:"C:\Program Files\7-Zip\7zgn.exe" /pdbtype:sept
+!IF  "$(CFG)" == "GUI - Win32 Debug"
+
+# Begin Target
+
+# Name "GUI.exe"
+# Name "GUI - Win32 Debug"
+# OutDir "Debug\"
+# IntDir "Debug\"
+# ExtObjDir "Debug\"
+# TargetDir ""
+# ImplibDir ""
+# LinkCmd "link.exe"
+# LinkFlags "/nologo /subsystem:console /incremental:no /pdb:"Debug\GUI.pdb" /debug /machine:I386 /out:"Debug\GUI.exe" /libpath:"C:\Program Files\Microsoft Visual Studio\VC98\lib"  kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib"
+# LinkDeps ""
+# End Target
+# Begin Group "Source Files"
+
+# PROP Default_Filter "cpp;c;cxx;rc;def;r;odl;idl;hpj;bat"
+CPP=cl.exe
+CPP_PROJ=/nologo /W3 /GX /ZI /Od /D "WIN32"
+CPP_OBJS=Debug\GUI.obj
+CPP_SBRS=
+CPP_SBRS=
+CPP_DEPS=Debug\GUI.dep
+CPP_DEPS_CPP=Debug\GUI.dep
+CPP_FLAGS=/D "_DEBUG" /D "_CONSOLE" /D "_MBCS" /Gm /EHsc /RTC1 /MDd /Fo"Debug\\" /Fd"Debug\vc60.pdb" /
+FD /GZ /c
+CPP_CMD=cl.exe /nologo /W3 /GX /ZI /Od /D "WIN32" /D "_DEBUG" /D "_CONSOLE" /D "_MBCS" /Gm /EHsc /RTC1 /MDd /Fo"Debug\\" /Fd"Debug\vc60.pdb" /FD /GZ /c GUI.cpp
+
+# End Group
+# Begin Group "Header Files"
+
+# PROP Default_Filter "h;hpp;hxx;hm;inl;inc;xsd"
+# End Group
+# Begin Group "Resource Files"
+
+# PROP Default_Filter "ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe"
+RSC=rc.exe
+RSC_PROJ=/l 0x409 /d "_DEBUG"
+RSC_OBJS=Debug\GUI.res
+RSC_DEPS=Debug\GUI.dep
+RSC_DEPS_CPP=Debug\GUI.dep
+RSC_SBRS=
+RSC_SBRS=
+RSC_FLAGS=/l 0x409 /d "_DEBUG" /fo"Debug\GUI.res" /i"C:\Program Files\Microsoft Visual Studio\VC98\include" /i"C:\Program Files\Microsoft Visual Studio\VC98\mfc\include" 
+RSC_CMD=rc.exe /l 0x409 /d "_DEBUG" /fo"Debug\GUI.res" /i"C:\Program Files\Microsoft Visual Studio\VC98\include" /i"C:\Program Files\Microsoft Visual Studio\VC98\mfc\include" GUI.rc
+
+# End Group
+# Begin Group "Resource Script Files"
+
+# PROP Default_Filter "rc"
+# End Group
+# Begin Group "Other Files"
+
+# PROP Default_Filter ""
+# End Group
+# Begin Source File
+
+SOURCE=Debug\GUI.obj
+!IF  "$(CFG)" == "GUI - Win32 Debug"
+SOURCE=Debug\GUI.obj
+!ELSEIF  "$(CFG)" == "GUI - Win32 Release"
+SOURCE=Release\GUI.obj
+!ENDIF 
+
+!IF  "$(CFG)" == "GUI - Win32 Debug"
+
+# PROP Default_Filter "cpp;c;cxx;rc;def;r;odl;idl;hpj;bat"
+CPP=cl.exe
+CPP_PROJ=/nologo /W3 /GX /
+ZI /Od /D "WIN32"
+
 
 !ENDIF 
 
